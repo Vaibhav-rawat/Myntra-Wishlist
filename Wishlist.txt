@@ -1,0 +1,13 @@
+var priceOfItems = []
+
+for( element of document.getElementsByClassName('itemdetails-boldFont') )
+{
+    priceOfItems.push(parseInt(element.innerText.replace(',','').slice(3)));
+}
+
+console.log('Total Price Of The Items')
+var p = priceOfItems.reduce((finalPrice,curElem)=>{
+    return finalPrice += curElem
+})
+
+alert(`Total items in your WishList are => ${priceOfItems.length} \nTotal Amount for '${priceOfItems.length}' items is => Rs.${p} `)
